@@ -1,0 +1,5 @@
+/* Lexical Part */
+
+_digit: '0' - '9';
+int64: '1' - '9' {_digit};
+float64: (int64 | _digit) {\.} {_digit}
