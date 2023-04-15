@@ -9,3 +9,12 @@ type FitnessLog struct {
 	// Details about user
 	user user.UserDetails
 }
+
+func NewFitnessLog() *FitnessLog {
+	return &FitnessLog{
+		entries: make([]*Workout, 0),
+	}
+}
+func (l *FitnessLog) AddWorkout(w Workout) {
+	l.entries = append(l.entries, &w)
+}
