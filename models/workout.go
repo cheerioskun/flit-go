@@ -1,6 +1,9 @@
 package models
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 // Model to hold details about a workout.
 type Workout struct {
@@ -18,13 +21,21 @@ type Workout struct {
 	calories int
 }
 
-func NewWorkout(date string, workout []Exercise) (interface{}, error) {
+func NewWorkout(date string, workout []Exercise) (*Workout, error) {
 	dateTime, err := time.Parse("2006-01-02", date)
 	if err != nil {
 		return nil, err
 	}
+
 	return &Workout{
 		when:      dateTime,
 		exercises: workout,
 	}, nil
+}
+
+func (w *Workout) Show() {
+	fmt.Printf("%s", w.when.String())
+	for _, exercise := range w.exercises {
+		exercise.Show()
+	}
 }

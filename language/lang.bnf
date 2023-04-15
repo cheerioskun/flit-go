@@ -1,47 +1,112 @@
 /* Lexical Part */
 
-!whitespace : ' ' | '\t' | '\n' | '\r';
-whitespace: ' ' | '\t' | '\n' | '\r';
+!whitespace: ' ' | '\t' | '\n' | '\r';
 _digit: '0' - '9';
-int: '1' - '9' {_digit};
-float: (int | _digit) {\.} {_digit};
-string: {('a' - 'z') | ('A' - 'Z') | ' '}; 
-// Date in YYYY-MM-DD
-date: (_digit _digit _digit _digit) - (_digit _digit) - (_digit _digit);
+_int: '1' - '9' {_digit};
+int: _int;
+_float: _digit {_digit} [('.' _digit {_digit})] ;
+float: _float;
+_chars: (('a' - 'z') | ('A' - 'Z'));
+_string: _chars  {(_chars | ' ' | _digit)};
+string: _string;
+
+// Date in YYYY-MM-DD   
+date: (_digit _digit _digit _digit) '-' (_digit _digit) '-' (_digit _digit);
+
 
 // Custom types
 
-name: string;
-
-comment: string;
+list_num: _digit '.' ' ';
 
 
 /* Syntax Part */
 
 <<
 import(
+    "strconv"
+    "fmt"
     "github.com/cheerioskun/flit-go/models"
+    "github.com/cheerioskun/flit-go/utils"
+    "github.com/cheerioskun/flit-go/language/util"
+    "github.com/cheerioskun/flit-go/language/token"
 )
 
-var fl = NewFitnessLog()
 >>
 
-log
-    : {entry}
+Log
+    : EntryList << models.NewFitnessLog($0.([]*models.Workout)), nil >>
+    ;
 
+Int:
+    int << util.IntValue($0.(*token.Token).Lit) >>
+    ;
 
-entry: 
-    date '\n' 
-        int '.' 
+String:
+    string << string($0.(*token.Token).Lit), nil >>
+    ;
 
-rep: int;
+Date:
+    date << string($0.(*token.Token).Lit), nil >>
+    ;
 
-rep_pair: '[' rep rep ']';
+Reps: 
+    Int << models.RepsPair{$0.(int64), $0.(int64)}, nil >>
+    | "[" Int Int "]" << models.RepsPair{$1.(int64), $2.(int64)}, nil >> 
+    ;
 
-weight: [('+' | '-')] float;
+SignedFloat:
+    "+" SignedFloat << $1.(float64), nil >>
+    | "-" SignedFloat << -1 * $1.(float64), nil >>
+    | float << strconv.ParseFloat(string($0.(*token.Token).Lit), 32) >>
+    | Int << float64($0.(int64)), nil >>
+    ;
 
-weight_pair: '[' weight weight ']';
+Weights: 
+    "(" SignedFloat ")" << models.WeightPair{$1.(float64), $1.(float64)}, nil >>
+    |  "([" SignedFloat SignedFloat "])" << models.WeightPair{$1.(float64), $2.(float64)}, nil >>
+    | empty << nil, nil >>
+    ;
+Comment:
+    "[" String "]" << $1.(string), nil >>
+    | empty << "", nil >>
+    ;
 
-set: (rep | rep_pair) '(' (weight | weight_pair) ')' '[' comment ']';
+Set: 
+    Reps Weights Comment << models.NewSet($0.(models.RepsPair), $1, $2.(string)) >>
+    ;
 
-exercise: name 
+SetList:
+    Set << []models.Set{$0.(models.Set)}, nil >>
+    | SetList "+" Set << append($0.([]models.Set), $2.(models.Set)), nil>>
+    ;
+
+Setting:
+    String ":" String << utils.Tuple{$0.(string), $2.(string)}, nil >>
+    | String ":" SignedFloat << utils.Tuple{$0.(string), fmt.Sprintf("%f", $2.(float64))}, nil >>
+    ;
+
+Settings:
+    Setting << utils.MapFromTuples([]utils.Tuple{$0.(utils.Tuple)}), nil >>
+    | Settings "," Setting << utils.MapFromTuples(append($0.([]utils.Tuple), $2.(utils.Tuple))), nil >>
+    | "(" Settings ")" << $1.(map[string]string), nil >>
+    | empty << nil, nil >>
+    ;
+
+Exercise:
+    list_num String Settings "=" SetList << models.NewExercise($1.(string), $4.([]models.Set), $2) >>
+    ;
+
+Exercises:
+    Exercise << []models.Exercise{$0.(models.Exercise)}, nil >>
+    | Exercises Exercise << append($0.([]models.Exercise), $1.(models.Exercise)), nil >>
+    ;
+
+Entry: 
+    Date Exercises << models.NewWorkout($0.(string), $1.([]models.Exercise)) >>
+    ;
+    
+EntryList: 
+    Entry << []*models.Workout{$0.(*models.Workout)}, nil >>
+    | EntryList Entry << append($0.([]*models.Workout), $1.(*models.Workout)), nil >>
+    ;
+

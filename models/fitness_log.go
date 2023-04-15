@@ -10,11 +10,17 @@ type FitnessLog struct {
 	user user.UserDetails
 }
 
-func NewFitnessLog() *FitnessLog {
+func NewFitnessLog(workouts []*Workout) *FitnessLog {
 	return &FitnessLog{
-		entries: make([]*Workout, 0),
+		entries: workouts,
 	}
 }
 func (l *FitnessLog) AddWorkout(w Workout) {
 	l.entries = append(l.entries, &w)
+}
+
+func (l *FitnessLog) Show() {
+	for _, workout := range l.entries {
+		workout.Show()
+	}
 }
