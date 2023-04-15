@@ -6,26 +6,25 @@ import (
 )
 
 type Exercise struct {
-	name     string
-	settings map[string]string
-	sets     []Set
+	Name     string            `json:"name"`
+	Settings map[string]string `json:"settings"`
+	Sets     []Set             `json:"sets"`
 }
 
-// Each set of an exercise
 type Set struct {
-	reps    RepsPair
-	weight  WeightPair
-	comment string
+	Reps    RepsPair   `json:"reps"`
+	Weights WeightPair `json:"weight"`
+	Comment string     `json:"comment"`
 }
 
 type RepsPair struct {
-	Left  int64
-	Right int64
+	Left  int64 `json:"left"`
+	Right int64 `json:"right"`
 }
 
 type WeightPair struct {
-	Left  float64
-	Right float64
+	Left  float64 `json:"left"`
+	Right float64 `json:"right"`
 }
 
 func NewSet(reps RepsPair, weight interface{}, comment string) (Set, error) {
@@ -33,9 +32,9 @@ func NewSet(reps RepsPair, weight interface{}, comment string) (Set, error) {
 		weight = WeightPair{0, 0}
 	}
 	return Set{
-		reps:    reps,
-		weight:  weight.(WeightPair),
-		comment: comment,
+		Reps:    reps,
+		Weights: weight.(WeightPair),
+		Comment: comment,
 	}, nil
 }
 
@@ -53,6 +52,6 @@ func NewExercise(name string, sets []Set, settings interface{}) (Exercise, error
 }
 
 func (e *Exercise) Show() {
-	fmt.Printf("Name: %s, Vals: %+v", e.name, e.sets)
+	fmt.Printf("Name: %s, Vals: %+v", e.Name, e.Sets)
 
 }

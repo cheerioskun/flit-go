@@ -4,23 +4,23 @@ import "github.com/cheerioskun/flit-go/models/user"
 
 type FitnessLog struct {
 	// A list of workouts
-	entries []*Workout
+	Entries []*Workout `json:"entries"`
 
 	// Details about user
-	user user.UserDetails
+	User user.UserDetails `json:"user"`
 }
 
 func NewFitnessLog(workouts []*Workout) *FitnessLog {
 	return &FitnessLog{
-		entries: workouts,
+		Entries: workouts,
 	}
 }
 func (l *FitnessLog) AddWorkout(w Workout) {
-	l.entries = append(l.entries, &w)
+	l.Entries = append(l.Entries, &w)
 }
 
 func (l *FitnessLog) Show() {
-	for _, workout := range l.entries {
+	for _, workout := range l.Entries {
 		workout.Show()
 	}
 }

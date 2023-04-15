@@ -8,10 +8,10 @@ import (
 // Model to hold details about a workout.
 type Workout struct {
 
-	// Date when the workout was done
-	when time.Time
-	// List of exercises in the workout
-	exercises []Exercise
+	// Date When the workout was done
+	When time.Time `json:"date"`
+	// List of Exercises in the workout
+	Exercises []Exercise `json:"exercises"`
 
 	// // Images like progress and full-body scans
 	// images []Image
@@ -28,14 +28,14 @@ func NewWorkout(date string, workout []Exercise) (*Workout, error) {
 	}
 
 	return &Workout{
-		when:      dateTime,
-		exercises: workout,
+		When:      dateTime,
+		Exercises: workout,
 	}, nil
 }
 
 func (w *Workout) Show() {
-	fmt.Printf("%s", w.when.String())
-	for _, exercise := range w.exercises {
+	fmt.Printf("%s", w.When.String())
+	for _, exercise := range w.Exercises {
 		exercise.Show()
 	}
 }

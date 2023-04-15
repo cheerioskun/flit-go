@@ -1,6 +1,8 @@
 package language
 
 import (
+	"encoding/json"
+	"fmt"
 	"testing"
 
 	"github.com/cheerioskun/flit-go/language/lexer"
@@ -36,7 +38,8 @@ func TestParsing(t *testing.T) {
 	if err != nil {
 		t.Fatalf("FAILED: %q", err)
 	} else {
-		(fl.(*models.FitnessLog)).Show()
+		bytes, _ := json.MarshalIndent(fl.(*models.FitnessLog), "", "    ")
+		fmt.Printf("%s", string(bytes))
 		t.Fatalf("%+v", fl)
 	}
 }
