@@ -237,10 +237,20 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
+		String: `Setting : String	<< utils.Tuple{X[0].(string), "True"}, nil >>`,
+		Id:         "Setting",
+		NTType:     11,
+		Index:      21,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return utils.Tuple{X[0].(string), "True"}, nil
+		},
+	},
+	ProdTabEntry{
 		String: `Settings : Setting	<< utils.MapFromTuples([]utils.Tuple{X[0].(utils.Tuple)}), nil >>`,
 		Id:         "Settings",
 		NTType:     12,
-		Index:      21,
+		Index:      22,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return utils.MapFromTuples([]utils.Tuple{X[0].(utils.Tuple)}), nil
@@ -250,7 +260,7 @@ var productionsTable = ProdTab{
 		String: `Settings : Settings "," Setting	<< utils.MapFromTuples(append(X[0].([]utils.Tuple), X[2].(utils.Tuple))), nil >>`,
 		Id:         "Settings",
 		NTType:     12,
-		Index:      22,
+		Index:      23,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return utils.MapFromTuples(append(X[0].([]utils.Tuple), X[2].(utils.Tuple))), nil
@@ -260,7 +270,7 @@ var productionsTable = ProdTab{
 		String: `Settings : "(" Settings ")"	<< X[1].(map[string]string), nil >>`,
 		Id:         "Settings",
 		NTType:     12,
-		Index:      23,
+		Index:      24,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[1].(map[string]string), nil
@@ -270,7 +280,7 @@ var productionsTable = ProdTab{
 		String: `Settings : empty	<< nil, nil >>`,
 		Id:         "Settings",
 		NTType:     12,
-		Index:      24,
+		Index:      25,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
@@ -280,7 +290,7 @@ var productionsTable = ProdTab{
 		String: `Exercise : list_num String Settings "=" SetList	<< models.NewExercise(X[1].(string), X[4].([]models.Set), X[2]) >>`,
 		Id:         "Exercise",
 		NTType:     13,
-		Index:      25,
+		Index:      26,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return models.NewExercise(X[1].(string), X[4].([]models.Set), X[2])
@@ -290,7 +300,7 @@ var productionsTable = ProdTab{
 		String: `Exercises : Exercise	<< []models.Exercise{X[0].(models.Exercise)}, nil >>`,
 		Id:         "Exercises",
 		NTType:     14,
-		Index:      26,
+		Index:      27,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return []models.Exercise{X[0].(models.Exercise)}, nil
@@ -300,7 +310,7 @@ var productionsTable = ProdTab{
 		String: `Exercises : Exercises Exercise	<< append(X[0].([]models.Exercise), X[1].(models.Exercise)), nil >>`,
 		Id:         "Exercises",
 		NTType:     14,
-		Index:      27,
+		Index:      28,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return append(X[0].([]models.Exercise), X[1].(models.Exercise)), nil
@@ -310,7 +320,7 @@ var productionsTable = ProdTab{
 		String: `Entry : Date Exercises	<< models.NewWorkout(X[0].(string), X[1].([]models.Exercise)) >>`,
 		Id:         "Entry",
 		NTType:     15,
-		Index:      28,
+		Index:      29,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return models.NewWorkout(X[0].(string), X[1].([]models.Exercise))
@@ -320,7 +330,7 @@ var productionsTable = ProdTab{
 		String: `EntryList : Entry	<< []*models.Workout{X[0].(*models.Workout)}, nil >>`,
 		Id:         "EntryList",
 		NTType:     16,
-		Index:      29,
+		Index:      30,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return []*models.Workout{X[0].(*models.Workout)}, nil
@@ -330,7 +340,7 @@ var productionsTable = ProdTab{
 		String: `EntryList : EntryList Entry	<< append(X[0].([]*models.Workout), X[1].(*models.Workout)), nil >>`,
 		Id:         "EntryList",
 		NTType:     16,
-		Index:      30,
+		Index:      31,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return append(X[0].([]*models.Workout), X[1].(*models.Workout)), nil

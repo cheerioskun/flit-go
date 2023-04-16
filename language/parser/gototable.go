@@ -307,8 +307,8 @@ var gotoTab = gotoTable{
 		-1, // Comment
 		-1, // Set
 		-1, // SetList
-		21, // Setting
-		22, // Settings
+		22, // Setting
+		23, // Settings
 		-1, // Exercise
 		-1, // Exercises
 		-1, // Entry
@@ -355,11 +355,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S18
 		-1, // S'
 		-1, // Log
-		25, // Int
-		27, // String
+		26, // Int
+		28, // String
 		-1, // Date
 		-1, // Reps
-		29, // SignedFloat
+		30, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -394,25 +394,6 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Log
 		-1, // Int
-		19, // String
-		-1, // Date
-		-1, // Reps
-		-1, // SignedFloat
-		-1, // Weights
-		-1, // Comment
-		-1, // Set
-		-1, // SetList
-		21, // Setting
-		34, // Settings
-		-1, // Exercise
-		-1, // Exercises
-		-1, // Entry
-		-1, // EntryList
-	},
-	gotoRow{ // S21
-		-1, // S'
-		-1, // Log
-		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -423,6 +404,25 @@ var gotoTab = gotoTable{
 		-1, // SetList
 		-1, // Setting
 		-1, // Settings
+		-1, // Exercise
+		-1, // Exercises
+		-1, // Entry
+		-1, // EntryList
+	},
+	gotoRow{ // S21
+		-1, // S'
+		-1, // Log
+		-1, // Int
+		19, // String
+		-1, // Date
+		-1, // Reps
+		-1, // SignedFloat
+		-1, // Weights
+		-1, // Comment
+		-1, // Set
+		-1, // SetList
+		22, // Setting
+		35, // Settings
 		-1, // Exercise
 		-1, // Exercises
 		-1, // Entry
@@ -451,7 +451,7 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Log
 		-1, // Int
-		13, // String
+		-1, // String
 		-1, // Date
 		-1, // Reps
 		-1, // SignedFloat
@@ -459,7 +459,7 @@ var gotoTab = gotoTable{
 		-1, // Comment
 		-1, // Set
 		-1, // SetList
-		37, // Setting
+		-1, // Setting
 		-1, // Settings
 		-1, // Exercise
 		-1, // Exercises
@@ -469,16 +469,16 @@ var gotoTab = gotoTable{
 	gotoRow{ // S24
 		-1, // S'
 		-1, // Log
-		38, // Int
-		-1, // String
+		-1, // Int
+		13, // String
 		-1, // Date
-		40, // Reps
+		-1, // Reps
 		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
-		42, // Set
-		43, // SetList
-		-1, // Setting
+		-1, // Set
+		-1, // SetList
+		38, // Setting
 		-1, // Settings
 		-1, // Exercise
 		-1, // Exercises
@@ -488,15 +488,15 @@ var gotoTab = gotoTable{
 	gotoRow{ // S25
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		39, // Int
 		-1, // String
 		-1, // Date
-		-1, // Reps
+		41, // Reps
 		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
-		-1, // Set
-		-1, // SetList
+		43, // Set
+		44, // SetList
 		-1, // Setting
 		-1, // Settings
 		-1, // Exercise
@@ -583,11 +583,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S30
 		-1, // S'
 		-1, // Log
-		25, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		44, // SignedFloat
+		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -602,7 +602,7 @@ var gotoTab = gotoTable{
 	gotoRow{ // S31
 		-1, // S'
 		-1, // Log
-		25, // Int
+		26, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -621,11 +621,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S32
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		26, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		-1, // SignedFloat
+		46, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -640,11 +640,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S33
 		-1, // S'
 		-1, // Log
-		46, // Int
-		48, // String
+		-1, // Int
+		-1, // String
 		-1, // Date
 		-1, // Reps
-		50, // SignedFloat
+		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -659,11 +659,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S34
 		-1, // S'
 		-1, // Log
-		-1, // Int
-		-1, // String
+		47, // Int
+		49, // String
 		-1, // Date
 		-1, // Reps
-		-1, // SignedFloat
+		51, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -698,7 +698,7 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Log
 		-1, // Int
-		19, // String
+		-1, // String
 		-1, // Date
 		-1, // Reps
 		-1, // SignedFloat
@@ -706,7 +706,7 @@ var gotoTab = gotoTable{
 		-1, // Comment
 		-1, // Set
 		-1, // SetList
-		55, // Setting
+		-1, // Setting
 		-1, // Settings
 		-1, // Exercise
 		-1, // Exercises
@@ -717,7 +717,7 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Log
 		-1, // Int
-		-1, // String
+		19, // String
 		-1, // Date
 		-1, // Reps
 		-1, // SignedFloat
@@ -725,7 +725,7 @@ var gotoTab = gotoTable{
 		-1, // Comment
 		-1, // Set
 		-1, // SetList
-		-1, // Setting
+		56, // Setting
 		-1, // Settings
 		-1, // Exercise
 		-1, // Exercises
@@ -778,7 +778,7 @@ var gotoTab = gotoTable{
 		-1, // Date
 		-1, // Reps
 		-1, // SignedFloat
-		56, // Weights
+		-1, // Weights
 		-1, // Comment
 		-1, // Set
 		-1, // SetList
@@ -792,12 +792,12 @@ var gotoTab = gotoTable{
 	gotoRow{ // S41
 		-1, // S'
 		-1, // Log
-		59, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
 		-1, // SignedFloat
-		-1, // Weights
+		57, // Weights
 		-1, // Comment
 		-1, // Set
 		-1, // SetList
@@ -811,7 +811,7 @@ var gotoTab = gotoTable{
 	gotoRow{ // S42
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		60, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -982,11 +982,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S51
 		-1, // S'
 		-1, // Log
-		46, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		62, // SignedFloat
+		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1001,7 +1001,7 @@ var gotoTab = gotoTable{
 	gotoRow{ // S52
 		-1, // S'
 		-1, // Log
-		46, // Int
+		47, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -1020,11 +1020,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S53
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		47, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		-1, // SignedFloat
+		64, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1083,7 +1083,7 @@ var gotoTab = gotoTable{
 		-1, // Reps
 		-1, // SignedFloat
 		-1, // Weights
-		65, // Comment
+		-1, // Comment
 		-1, // Set
 		-1, // SetList
 		-1, // Setting
@@ -1096,13 +1096,13 @@ var gotoTab = gotoTable{
 	gotoRow{ // S57
 		-1, // S'
 		-1, // Log
-		66, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		68, // SignedFloat
+		-1, // SignedFloat
 		-1, // Weights
-		-1, // Comment
+		66, // Comment
 		-1, // Set
 		-1, // SetList
 		-1, // Setting
@@ -1115,11 +1115,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S58
 		-1, // S'
 		-1, // Log
-		72, // Int
+		67, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		74, // SignedFloat
+		69, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1134,11 +1134,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S59
 		-1, // S'
 		-1, // Log
-		78, // Int
+		73, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		-1, // SignedFloat
+		75, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1153,7 +1153,7 @@ var gotoTab = gotoTable{
 	gotoRow{ // S60
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		79, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -1172,14 +1172,14 @@ var gotoTab = gotoTable{
 	gotoRow{ // S61
 		-1, // S'
 		-1, // Log
-		38, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
-		40, // Reps
+		-1, // Reps
 		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
-		80, // Set
+		-1, // Set
 		-1, // SetList
 		-1, // Setting
 		-1, // Settings
@@ -1191,14 +1191,14 @@ var gotoTab = gotoTable{
 	gotoRow{ // S62
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		39, // Int
 		-1, // String
 		-1, // Date
-		-1, // Reps
+		41, // Reps
 		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
-		-1, // Set
+		81, // Set
 		-1, // SetList
 		-1, // Setting
 		-1, // Settings
@@ -1230,7 +1230,7 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Log
 		-1, // Int
-		81, // String
+		-1, // String
 		-1, // Date
 		-1, // Reps
 		-1, // SignedFloat
@@ -1249,7 +1249,7 @@ var gotoTab = gotoTable{
 		-1, // S'
 		-1, // Log
 		-1, // Int
-		-1, // String
+		82, // String
 		-1, // Date
 		-1, // Reps
 		-1, // SignedFloat
@@ -1324,11 +1324,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S69
 		-1, // S'
 		-1, // Log
-		66, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		84, // SignedFloat
+		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1343,7 +1343,7 @@ var gotoTab = gotoTable{
 	gotoRow{ // S70
 		-1, // S'
 		-1, // Log
-		66, // Int
+		67, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -1362,11 +1362,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S71
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		67, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		-1, // SignedFloat
+		86, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1419,11 +1419,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S74
 		-1, // S'
 		-1, // Log
-		86, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		88, // SignedFloat
+		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1438,11 +1438,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S75
 		-1, // S'
 		-1, // Log
-		72, // Int
+		87, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		92, // SignedFloat
+		89, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1457,7 +1457,7 @@ var gotoTab = gotoTable{
 	gotoRow{ // S76
 		-1, // S'
 		-1, // Log
-		72, // Int
+		73, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -1476,11 +1476,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S77
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		73, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		-1, // SignedFloat
+		94, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1704,11 +1704,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S89
 		-1, // S'
 		-1, // Log
-		86, // Int
+		-1, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		97, // SignedFloat
+		-1, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1723,7 +1723,7 @@ var gotoTab = gotoTable{
 	gotoRow{ // S90
 		-1, // S'
 		-1, // Log
-		86, // Int
+		87, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
@@ -1742,11 +1742,11 @@ var gotoTab = gotoTable{
 	gotoRow{ // S91
 		-1, // S'
 		-1, // Log
-		-1, // Int
+		87, // Int
 		-1, // String
 		-1, // Date
 		-1, // Reps
-		-1, // SignedFloat
+		99, // SignedFloat
 		-1, // Weights
 		-1, // Comment
 		-1, // Set
@@ -1873,6 +1873,25 @@ var gotoTab = gotoTable{
 		-1, // EntryList
 	},
 	gotoRow{ // S98
+		-1, // S'
+		-1, // Log
+		-1, // Int
+		-1, // String
+		-1, // Date
+		-1, // Reps
+		-1, // SignedFloat
+		-1, // Weights
+		-1, // Comment
+		-1, // Set
+		-1, // SetList
+		-1, // Setting
+		-1, // Settings
+		-1, // Exercise
+		-1, // Exercises
+		-1, // Entry
+		-1, // EntryList
+	},
+	gotoRow{ // S99
 		-1, // S'
 		-1, // Log
 		-1, // Int

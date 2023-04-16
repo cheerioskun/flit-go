@@ -2,7 +2,7 @@
 
 !whitespace: ' ' | '\t' | '\n' | '\r';
 _digit: '0' - '9';
-_int: '1' - '9' {_digit};
+_int: _digit {_digit};
 int: _int;
 _float: _digit {_digit} [('.' _digit {_digit})] ;
 float: _float;
@@ -83,6 +83,7 @@ SetList:
 Setting:
     String ":" String << utils.Tuple{$0.(string), $2.(string)}, nil >>
     | String ":" SignedFloat << utils.Tuple{$0.(string), fmt.Sprintf("%f", $2.(float64))}, nil >>
+    | String << utils.Tuple{$0.(string), "True"}, nil >>
     ;
 
 Settings:

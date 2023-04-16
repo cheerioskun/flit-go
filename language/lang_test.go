@@ -94,5 +94,13 @@ func TestParsing(t *testing.T) {
 			t.Fail()
 		}
 	}
+}
 
+func BenchmarkParsing(b *testing.B) {
+	p := parser.NewParser()
+	for i := 0; i < b.N; i++ {
+		lx, _ := lexer.NewLexerFile("../test.log")
+
+		p.Parse(lx)
+	}
 }

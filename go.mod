@@ -3,7 +3,11 @@ module github.com/cheerioskun/flit-go
 go 1.18
 
 require (
-	github.com/goccmack/gocc v0.0.0-20230228185258-2292f9e40198 // indirect
-	github.com/nsf/jsondiff v0.0.0-20210926074059-1e845ec5d249 // indirect
-	golang.org/x/mod v0.8.0 // indirect
+	github.com/nsf/jsondiff v0.0.0-20210926074059-1e845ec5d249
+	github.com/spf13/cobra v1.7.0
+)
+
+require (
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
 )
