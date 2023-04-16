@@ -3,6 +3,7 @@ package models
 import (
 	"errors"
 	"fmt"
+	"strings"
 )
 
 type Exercise struct {
@@ -39,16 +40,19 @@ func NewSet(reps RepsPair, weight interface{}, comment string) (Set, error) {
 }
 
 func NewExercise(name string, sets []Set, settings interface{}) (Exercise, error) {
-	if settings == nil {
-		settings = make(map[string]string)
-	}
+
 	if name == "" {
 		return Exercise{}, errors.New("name must not be empty")
 	}
 	if len(sets) == 0 {
 		return Exercise{}, errors.New("sets cannot be empty")
 	}
-	return Exercise{name, settings.(map[string]string), sets}, nil
+	name = strings.TrimSpace(name)
+	ex := Exercise{name, nil, sets}
+	if settings != nil {
+		ex.Settings = settings.(map[string]string)
+	}
+	return ex, nil
 }
 
 func (e *Exercise) Show() {

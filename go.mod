@@ -4,5 +4,6 @@ go 1.18
 
 require (
 	github.com/goccmack/gocc v0.0.0-20230228185258-2292f9e40198 // indirect
+	github.com/nsf/jsondiff v0.0.0-20210926074059-1e845ec5d249 // indirect
 	golang.org/x/mod v0.8.0 // indirect
 )
